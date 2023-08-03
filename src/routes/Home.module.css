@@ -1,0 +1,62 @@
+/* Home.js */
+.container {
+    height: 100%;
+    position: relative;
+  }
+.load{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+}
+.loader {
+  width: 80px;
+  height: 80px;
+  border: 3px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+
+.header{
+  border-bottom:1px solid rgba(255, 255, 255, 0.4) ;
+}
+.logo{
+  width: 200px;
+  height: 50px;
+  padding: 10px 0;
+  margin: 0 0 0 20px;
+}
+.logo > img{
+  width: 100%;
+  height: 100%;
+}
+.movie__box{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 20px;
+  margin-left: 50px;
+}
+
+/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/
+@media all and (max-width:479px) { 
+  .movie__box{
+    margin-left: 0;
+    justify-content: center;
+  }
+  
+  .logo{
+    margin: 0 auto;
+  }
+}
