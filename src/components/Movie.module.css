@@ -56,6 +56,7 @@
     border: none;
     border-radius: 5px;
     background: #ec0101;
+    display: block;
     width: 100%;
     height: 45px;
     cursor: pointer;
@@ -120,6 +121,7 @@
 
 .det__text__wrap {
     padding-left: 30px;
+    position: relative;
 }
 
 .det__info__small {
@@ -127,7 +129,10 @@
     gap: 10px;
     padding-top: 20px;
 }
-
+.det__btn__wrap{
+    position: absolute;
+    bottom: 0;
+}
 .det__btn__wrap button:first-child {
     background-color: orangered;
 }
@@ -156,43 +161,37 @@
     padding-top: 20px;
     position: relative;
 }
-
 .det__summary::-webkit-scrollbar {
     display: none /* Chrome , Safari , Opera */
 }
-.arrow::before{
-    content: "▼";
-    position: absolute;
-    animation: updown 2s infinite ;
-    right: -30px;
-}
-@keyframes updown {
-    0%{
-        bottom: 0;
-    }
-    50%{
-        bottom: -5px;
-    }
-    100%{
-        bottom: 5px;
-    }
-}
+
 .det__bg img {
     width: 100%;
     height: 100%;
 }
 
-/* 모바일 가로 (해상도 ~ 479px)*/
-@media all and (max-width:479px) { 
+@media all and (max-width:1440px) { 
     .movie {
-        width: 40%;
+        width: 23%;
+    }
+    .movie:hover .text__hover {
+        display: none;
+    }
+    .movie:hover .movie__img {
+        filter: none;
+    }
+    /* 디테일 페이지 */
+    .det__text__wrap>h2 {
+        font-size: 30px;
+    }
+}
+@media all and (max-width:1024px) { 
+    .movie {
+        width: 30%;
     }
     /* 디테일 페이지 */
     .det__info {
         display: block;
-    }
-    .arrow::before{
-        display: none;
     }
     .det__movie__box {
         position: relative;
@@ -213,10 +212,19 @@
     .det__text__wrap {
         padding: 30px;
     }
-    .det__text__wrap>h2 {
-        font-size: 24px;
+    .det__btn__wrap{
+        /* bottom: 30px; */
+        bottom: -20px;
+        padding-bottom: 20px;
     }
     .det__bg{
         display: none;
+    }
+
+}
+/* 모바일 가로 (해상도 ~ 479px)*/
+@media all and (max-width:479px) { 
+    .movie {
+        width: 40%;
     }
 }

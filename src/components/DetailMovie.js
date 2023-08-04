@@ -4,7 +4,7 @@ import styles from "./Movie.module.css";
 
 function Movie({ id, title, titleLong, coverImg, rating, runtime, summary, genres, year, bgImg, url }) {
     return (
-        <div id={id} className={styles.det__movie__wrap}>          
+        <div id={id} className={styles.det__movie__wrap}>      
             <div className={styles.det__movie__box}>
                 <div className={styles.det__info}>
                     <div className={styles.det__cover__img}>
@@ -14,7 +14,6 @@ function Movie({ id, title, titleLong, coverImg, rating, runtime, summary, genre
                         <h2>{titleLong}</h2>
                         <ul className={styles.det__info__small}>
                             <li>⭐{rating}</li>
-                            <li>{year}</li>
                             <li>{runtime}min</li>
                         </ul>                       
                       
@@ -24,7 +23,6 @@ function Movie({ id, title, titleLong, coverImg, rating, runtime, summary, genre
                             )}
                         </ul>
                         <p className={styles.det__summary}>{summary}</p>
-                        <div className={styles.arrow}></div>
                         <div className={styles.det__btn__wrap}>
                             <button><Link to={`/react-movie-web`}>뒤로</Link></button>
                             <button><Link to={`${url}`}>더보기</Link></button>

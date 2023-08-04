@@ -9,7 +9,7 @@ function Movie({id, coverImg, title, summary, year, rating}) {
         <img src={coverImg} alt={title} className={styles.movie__img} />
         <div className={styles.text__hover}>
         <p className={styles.rating}><span className={styles.star}>⭐</span>{rating}/10</p>
-        <p className={styles.movie__summary}>{summary.length > 135 ? `${summary.slice(0, 135)}...` : summary}</p>
+        <p className={styles.movie__summary}>{summary.length > 100 ? `${summary.slice(0, 100)}...` : summary}</p>
         <button className={styles.detail__btn}>
            <Link to={`${process.env.PUBLIC_URL}/movie/${id}`}>DETAIL</Link>
         </button>
